@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-rcb-red: var(--rcb-red);
+    --color-rcb-gold: var(--rcb-gold);
+    --color-rcb-dark: var(--rcb-dark);
+    --color-rcb-darker: var(--rcb-darker);
+    --font-condensed: "Bebas Neue", sans-serif;
+    --font-sans: "Montserrat", sans-serif;
+}
+
+:root {
+    --radius: 0.25rem;
+    --background: oklch(0.09 0.02 20);
+    --foreground: oklch(0.97 0 0);
+    --card: oklch(0.13 0.03 20);
+    --card-foreground: oklch(0.97 0 0);
+    --popover: oklch(0.13 0.03 20);
+    --popover-foreground: oklch(0.97 0 0);
+    --primary: oklch(0.52 0.22 25);
+    --primary-foreground: oklch(0.97 0 0);
+    --secondary: oklch(0.16 0.04 20);
+    --secondary-foreground: oklch(0.97 0 0);
+    --muted: oklch(0.16 0.03 20);
+    --muted-foreground: oklch(0.65 0.05 20);
+    --accent: oklch(0.16 0.03 20);
+    --accent-foreground: oklch(0.97 0 0);
+    --destructive: oklch(0.52 0.22 25);
+    --destructive-foreground: oklch(0.97 0 0);
+    --border: oklch(0.22 0.04 20);
+    --input: oklch(0.22 0.04 20);
+    --ring: oklch(0.52 0.22 25);
+    --chart-1: oklch(0.52 0.22 25);
+    --chart-2: oklch(0.75 0.18 70);
+    --chart-3: oklch(0.65 0.12 200);
+    --chart-4: oklch(0.7 0.15 150);
+    --chart-5: oklch(0.6 0.18 280);
+    /* RCB Brand Colors */
+    --rcb-red: oklch(0.52 0.22 25);
+    --rcb-gold: oklch(0.75 0.18 70);
+    --rcb-dark: oklch(0.13 0.03 20);
+    --rcb-darker: oklch(0.09 0.02 20);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: "Montserrat", sans-serif;
+    }
+}
