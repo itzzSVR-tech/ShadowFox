@@ -120,61 +120,84 @@ export function PlayerPage({ playerId, onNavigate }: PlayerPageProps) {
                     className="relative z-10 mx-6 md:mx-16 mb-16 grid grid-cols-2 md:grid-cols-4 gap-px overflow-hidden rounded-sm"
                     style={{ background: "var(--border)" }}
                 >
-                    {[
-                        {
-                            label: "IPL Matches",
-                            value: player.stats.iplMatches.toString(),
-                        },
-                        {
-                            label: "Total Runs",
-                            value: player.stats.totalRuns.toLocaleString(),
-                        },
-                        {
-                            label: "Strike Rate",
-                            value: player.stats.strikeRate.toFixed(1),
-                        },
-                        {
-                            label: "100s / 50s",
-                            value: player.stats.hundreds.toString(),
-                            suffix: `/ ${player.stats.fifties}`,
-                        },
-                    ].map((stat) => (
-                        <div
-                            key={stat.label}
-                            className="px-6 py-6"
-                            style={{ background: "var(--rcb-dark)" }}
-                        >
+                    {(() => {
+                        const isBowler = player.role.toLowerCase().includes("bowler");
+                        const statsList = isBowler
+                            ? [
+                                  {
+                                      label: "IPL Matches",
+                                      value: (player.stats.iplMatches ?? 0).toString(),
+                                  },
+                                  {
+                                      label: "Wickets",
+                                      value: (player.stats.totalWickets ?? 0).toString(),
+                                  },
+                                  {
+                                      label: "Economy",
+                                      value: (player.stats.economy ?? 0).toFixed(2),
+                                  },
+                                  {
+                                      label: "Best Figure",
+                                      value: player.stats.bestFigure ?? "-",
+                                  },
+                              ]
+                            : [
+                                  {
+                                      label: "IPL Matches",
+                                      value: (player.stats.iplMatches ?? 0).toString(),
+                                  },
+                                  {
+                                      label: "Total Runs",
+                                      value: (player.stats.totalRuns ?? 0).toLocaleString(),
+                                  },
+                                  {
+                                      label: "Strike Rate",
+                                      value: (player.stats.strikeRate ?? 0).toFixed(1),
+                                  },
+                                  {
+                                      label: "100s / 50s",
+                                      value: (player.stats.hundreds ?? 0).toString(),
+                                      suffix: `/ ${player.stats.fifties ?? 0}`,
+                                  },
+                              ];
+                        return statsList.map((stat) => (
                             <div
-                                className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2"
-                                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                                key={stat.label}
+                                className="px-6 py-6"
+                                style={{ background: "var(--rcb-dark)" }}
                             >
-                                {stat.label}
-                            </div>
-                            <div className="flex items-baseline gap-2">
-                                <span
-                                    className="text-4xl md:text-5xl font-black"
-                                    style={{
-                                        fontFamily:
-                                            "'Bebas Neue', sans-serif",
-                                        color: "white",
-                                    }}
+                                <div
+                                    className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-2"
+                                    style={{ fontFamily: "'Montserrat', sans-serif" }}
                                 >
-                                    {stat.value}
-                                </span>
-                                {stat.suffix && (
+                                    {stat.label}
+                                </div>
+                                <div className="flex items-baseline gap-2">
                                     <span
-                                        className="text-xl font-bold text-muted-foreground"
+                                        className="text-4xl md:text-5xl font-black"
                                         style={{
                                             fontFamily:
                                                 "'Bebas Neue', sans-serif",
+                                            color: "white",
                                         }}
                                     >
-                                        {stat.suffix}
+                                        {stat.value}
                                     </span>
-                                )}
+                                    {stat.suffix && (
+                                        <span
+                                            className="text-xl font-bold text-muted-foreground"
+                                            style={{
+                                                fontFamily:
+                                                    "'Bebas Neue', sans-serif",
+                                            }}
+                                        >
+                                            {stat.suffix}
+                                        </span>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ));
+                    })()}
                 </div>
             </div>
 
