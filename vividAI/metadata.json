@@ -1,0 +1,6 @@
+{
+    "name": "AI Trivia Game",
+    "description": "An interactive trivia game featuring an AI host with a dynamic, user-chosen personality who asks questions, provides hints, and remarks dryly or enthusiastically on your answers.",
+    "requestFramePermissions": [],
+    "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
