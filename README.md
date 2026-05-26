@@ -28,7 +28,7 @@ Throughout this internship, I utilized a variety of modern web technologies to b
     - Mobile responsive
     - Easy to update
 - **Tech Stack:** HTML, CSS, JavaScript
-- **Source Code:** [Portfolio](https://github.com/itzzSVR-tech/ShadowFox/tree/main/Portfolio)
+- **Source Code:** [Portfolio](https://github.com/itzzSVR-tech/ShadowFox/tree/main/portfolio)
 
 ### 2. RCB Roster
 
