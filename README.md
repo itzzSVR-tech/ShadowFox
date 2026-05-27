@@ -39,6 +39,7 @@ Throughout this internship, I utilized a variety of modern web technologies to b
     - Mobile responsive
     - Easy to update
 - **Tech Stack:** Tailwind CSS, React, TypeScript, RapidAPI
+- **Live Link:** [Live](https://rcb-roster.vercel.app)
 - **Source Code:** [RCB Roster](https://github.com/itzzSVR-tech/ShadowFox/tree/main/RCB)
 
 ### 3. Vivid AI
@@ -49,6 +50,7 @@ Throughout this internship, I utilized a variety of modern web technologies to b
     - Dynamic AI Host Personalities
     - Live Banter Thread
 - **Tech Stack:** Tailwind CSS, React, TypeScript, Google Gemini API
+- **Live Link:** [Live](https:///vividai-lilac.vercel.app)
 - **Source Code:** [Vivid AI](https://github.com/itzzSVR-tech/ShadowFox/tree/main/vividAI)
 
 ## ⚙️ Local Setup & Installation
